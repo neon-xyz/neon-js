@@ -1879,7 +1879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neonpay/js@workspace:1.1.0, @neonpay/js@workspace:packages/js":
+"@neonpay/js@workspace:packages/js":
   version: 0.0.0-use.local
   resolution: "@neonpay/js@workspace:packages/js"
   dependencies:
@@ -4799,7 +4799,6 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.23.6"
     "@babel/preset-env": "npm:^7.23.6"
     "@babel/runtime": "npm:^7.23.6"
-    "@neonpay/js": "workspace:1.1.0"
     babel-loader: "npm:^9.1.3"
     babel-preset-env: "npm:^1.7.0"
     html-webpack-plugin: "npm:^5.5.4"
