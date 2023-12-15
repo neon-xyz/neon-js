@@ -26,3 +26,16 @@ jobs:
       - run: yarn install --immutable
       - run: yarn workspace ${{ matrix.workspace }} run check
       - run: yarn workspace ${{ matrix.workspace }} run test
+
+  check:
+    runs-on: ubuntu-latest
+    if: always()
+
+    needs:
+      - test
+
+    steps:
+    - name: Decide whether the needed jobs succeeded or failed
+      uses: re-actors/alls-green@release/v1
+      with:
+        jobs: ${{ toJSON(needs) }}
