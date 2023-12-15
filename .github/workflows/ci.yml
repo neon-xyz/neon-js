@@ -17,12 +17,12 @@ jobs:
           - "@neonpay/js"
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: yarn
-      - run: NODE_DEBUG='*' yarn install
+      - run: yarn install
       - run: yarn workspace ${{ matrix.workspace }} run check
       - run: yarn workspace ${{ matrix.workspace }} run test
 
