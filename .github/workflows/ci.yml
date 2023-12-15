@@ -13,15 +13,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        node-version: [18, 20]
         workspace:
           - "@neonpay/js"
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: pwd; ls -la
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
       - run: yarn install
       - run: yarn workspace ${{ matrix.workspace }} run check
       - run: yarn workspace ${{ matrix.workspace }} run test
@@ -34,7 +35,7 @@ jobs:
       - test
 
     steps:
-    - name: Decide whether the needed jobs succeeded or failed
-      uses: re-actors/alls-green@release/v1
-      with:
-        jobs: ${{ toJSON(needs) }}
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}

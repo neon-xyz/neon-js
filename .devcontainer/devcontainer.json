@@ -1,5 +1,13 @@
 {
   "name": "Node.js & TypeScript",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-18-bullseye",
-  "updateContentCommand": "yarn install"
+  "updateContentCommand": "yarn install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.vscode-github-actions",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
