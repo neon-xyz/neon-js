@@ -82,8 +82,6 @@ git push
 echo "Building..."
 yarn run build
 
-exit 1
-
 echo "Publishing release"
 yarn npm publish --access=public
 
