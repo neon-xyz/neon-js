@@ -1,14 +1,14 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   mode: "development",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].bundle.js",
+    publicPath: "/",
   },
   devServer: {
     compress: true,
@@ -20,12 +20,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: "babel-loader",
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" }), new webpack.HotModuleReplacementPlugin()],
 };
