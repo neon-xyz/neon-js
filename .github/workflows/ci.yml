@@ -17,12 +17,12 @@ jobs:
         workspace:
           - "@neonpay/js"
 
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-          with:
-            node_version: ${{ matrix.node_version }}
-            cache: yarn
-        - run: yarn install --immutable
-        - run: yarn workspace ${{ matrix.workspace }} run check
-        - run: yarn workspace ${{ matrix.workspace }} run test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node_version: ${{ matrix.node_version }}
+          cache: yarn
+      - run: yarn install --immutable
+      - run: yarn workspace ${{ matrix.workspace }} run check
+      - run: yarn workspace ${{ matrix.workspace }} run test
