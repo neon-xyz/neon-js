@@ -70,6 +70,12 @@ echo "Running in directory: $PWD"
 echo "installing packages"
 yarn install --immutable
 
+echo "Running linting"
+yarn run check
+
+echo "Running tests"
+yarn run test
+
 echo "Bumping version (${1})"
 yarn version "$1"
 

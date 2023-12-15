@@ -1879,7 +1879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neonpay/js@workspace:1.1.0, @neonpay/js@workspace:packages/js":
+"@neonpay/js@workspace:packages/js":
   version: 0.0.0-use.local
   resolution: "@neonpay/js@workspace:packages/js"
   dependencies:
@@ -4490,10 +4490,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.3.47, electron-to-chromium@npm:^1.4.601":
-  version: 1.4.612
-  resolution: "electron-to-chromium@npm:1.4.612"
-  checksum: 4afeae778beb67e81a47e362b72847efc24161b7673818b3d5a36fa0678f006629436a5cfa6b0bb0291927c61d01e58b66330942cc7f4109f170bdec6bfafd73
+"electron-to-chromium@npm:^1.3.47":
+  version: 1.4.614
+  resolution: "electron-to-chromium@npm:1.4.614"
+  checksum: 2cc4209c5f5794be069d74a4aa9b0849fba3570d06f981dbe41d626b0cc88cfbf8b9aae47b033e67370f477ce49168b4d4324c7c518ee28012e8430b65c5fe84
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.4.601":
+  version: 1.4.613
+  resolution: "electron-to-chromium@npm:1.4.613"
+  checksum: 34c1f2a244db7f628373a4f9a25bf7b6e4d16755a92aebea7882434683abe550e72bd06fb3b4c673dffebddc5d4cc6a5aef8fb11cb5cceb37a8d0f1801ca802e
   languageName: node
   linkType: hard
 
@@ -4799,7 +4806,6 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.23.6"
     "@babel/preset-env": "npm:^7.23.6"
     "@babel/runtime": "npm:^7.23.6"
-    "@neonpay/js": "workspace:1.1.0"
     babel-loader: "npm:^9.1.3"
     babel-preset-env: "npm:^1.7.0"
     html-webpack-plugin: "npm:^5.5.4"
