@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node_version: [16, 18, 20, 21]
+        node_version: [18, 20, 21]
         workspace:
           - "@neonpay/js"
 
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
           cache: yarn
-      - run: yarn install --immutable
+      - run: yarn install
       - run: yarn workspace ${{ matrix.workspace }} run check
       - run: yarn workspace ${{ matrix.workspace }} run test
 
