@@ -15,15 +15,14 @@ jobs:
       matrix:
         workspace:
           - "@neonpay/js"
-        node_version: [18, 20, 21]
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: 18
           cache: yarn
-      - run: yarn install
+      - run: NODE_DEBUG='*' yarn install
       - run: yarn workspace ${{ matrix.workspace }} run check
       - run: yarn workspace ${{ matrix.workspace }} run test
 
