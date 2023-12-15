@@ -4,10 +4,7 @@
   "updateContentCommand": "yarn install",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "GitHub.vscode-github-actions",
-        "esbenp.prettier-vscode"
-      ]
+      "extensions": ["GitHub.vscode-github-actions", "esbenp.prettier-vscode"]
     }
   }
 }

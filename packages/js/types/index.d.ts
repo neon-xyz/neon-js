@@ -1,6 +1,6 @@
 declare global {
   interface Window {
-    Neon?: (environmentId: string) => Neon;
+    Neon?: NeonConstructor;
   }
 }
 
