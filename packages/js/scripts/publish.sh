@@ -39,6 +39,11 @@ case $RELEASE_TYPE in
     ;;
 esac
 
+if ! yarn npm whoami; then
+  echo "error: you must sign into npm using: yarn npm login" >&2
+  exit 1
+fi
+
 echo "Make sure our working dir is the repo root directory"
 cd "$(git rev-parse --show-toplevel)"
 echo "Working in ${PWD}"
