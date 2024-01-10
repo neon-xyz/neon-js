@@ -1,7 +1,3 @@
-# sdk
-
-This is a backend SDK that helps to integrate and receive Neon's webhooks and callbacks. For futher details consult [documentation](https://neonpay.readme.io/docs/webhooks-and-callbacks).
-
 # Neon SDK ES Module
 
 This is a backend SDK that helps to integrate and implement processing for Neon's webhooks. For futher details consult [documentation](https://neonpay.readme.io/docs/webhooks-and-callbacks).
@@ -20,7 +16,7 @@ yarn add @neonpay/sdk
 
 ## Usage
 
-# See the [`examples/`](https://github.com/neon-xyz/neon-js/blob/main/examples) directory for example usages.
+TODO: link to examples
 
 ## `Handle webhook after SDK checks that the webhook was signed by Neon and was not tampered with`
 
