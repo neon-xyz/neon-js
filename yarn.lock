@@ -1894,6 +1894,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@neonpay/sdk@workspace:packages/sdk":
+  version: 0.0.0-use.local
+  resolution: "@neonpay/sdk@workspace:packages/sdk"
+  dependencies:
+    "@types/jest": "npm:^29.5.11"
+    "@types/node": "npm:^20.10.8"
+    jest: "npm:^29.7.0"
+    neverthrow: "npm:^6.1.0"
+    ts-jest: "npm:^29.1.1"
+    ts-node: "npm:^10.9.2"
+    tsup: "npm:^8.0.1"
+    typescript: "npm:^5.3.3"
+    zod: "npm:^3.22.4"
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2345,6 +2361,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 2c8b70cba731eb2ae3ae046daa74903bfcbb0e7b9196da767e5895054f6d252296ae7a04fb1dbbcb53bb004c4c658c05eaea2731bc9e2dd9e08f7e88d672f563
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.10.8":
+  version: 20.10.8
+  resolution: "@types/node@npm:20.10.8"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 93268c33c3bf0194427d696658160c77ab8661aa57107df5b248ff952898a372bf92cf0ba7fc07788fa35e59c69b6619cce63d45e4e67fca806e37da7ea42512
   languageName: node
   linkType: hard
 
@@ -6930,6 +6955,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"neverthrow@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "neverthrow@npm:6.1.0"
+  checksum: 4983600d84879c6e3ddd5f50281371a24b548446138d7108a11a131ba32e87369e875c046817913a489cfa8fcc7d518f7968988973bd880f69817b018aae294e
+  languageName: node
+  linkType: hard
+
 "no-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "no-case@npm:3.0.4"
@@ -9298,5 +9330,12 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 856117aa15cf5103d2a2fb173f0ab4acb12b4b4d0ed3ab249fdbbf612e55d1cadfd27a6110940e24746fb0a78cf640b522cc8bca76f30a3b00b66e90cf82abe0
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 7578ab283dac0eee66a0ad0fc4a7f28c43e6745aadb3a529f59a4b851aa10872b3890398b3160f257f4b6817b4ce643debdda4fb21a2c040adda7862cab0a587
   languageName: node
   linkType: hard
