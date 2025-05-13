@@ -10,11 +10,11 @@ export interface Checkout {
 }
 
 export interface Neon {
-  startEmbeddedCheckout(props: { checkoutId: string; email: string; phoneNumber: string }): Checkout;
+  startEmbeddedCheckout(props: { checkoutId: string; email?: string; phoneNumber?: string }): Checkout;
 }
 
 export interface NeonConstructor {
-  (environmentId: string): Neon;
+  (clientKey: string): Neon;
 }
 
-export const loadNeonJs: (environmentId: string) => Promise<Neon | null>;
+export const loadNeonJs: (clientKey: string) => Promise<Neon | null>;

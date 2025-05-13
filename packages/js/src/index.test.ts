@@ -1,5 +1,5 @@
 const NEON_JS_URL = "https://js.poweredbyneon.com/v1/neon.js";
-const ENVIRONMENT_ID = "test-environment-id";
+const CLIENT_KEY = "ck_test_12341234";
 
 const dispatchScriptEvent = (eventType: string): void => {
   const injectedScript = document.querySelector(`script[src="${NEON_JS_URL}"]`);
@@ -34,7 +34,7 @@ describe("Module loader", () => {
   it("does not inject the script when Neon.js is already loaded", async () => {
     require("./index");
 
-    window.Neon = jest.fn((environmentId) => ({ environmentId })) as any;
+    window.Neon = jest.fn((clientKey) => ({ clientKey })) as any;
 
     await new Promise((resolve) => setTimeout(resolve)).then(() => {
       expect(document.querySelector(`script[src="${NEON_JS_URL}"]`)).toBe(null);
@@ -81,21 +81,21 @@ describe("Module loader", () => {
 
     it("resolves with a Neon object", async () => {
       const { loadNeonJs } = require("./index");
-      const promise = loadNeonJs(ENVIRONMENT_ID);
+      const promise = loadNeonJs(CLIENT_KEY);
 
       await Promise.resolve();
-      window.Neon = jest.fn((environmentId) => ({ environmentId })) as any;
+      window.Neon = jest.fn((clientKey) => ({ clientKey })) as any;
       dispatchScriptEvent("load");
 
       await expect(promise).resolves.toEqual({
-        environmentId: ENVIRONMENT_ID,
+        clientKey: CLIENT_KEY,
       });
     });
 
     it("rejects when the script fails", async () => {
       const spy = jest.spyOn(console, "warn").mockReturnValue();
       const { loadNeonJs } = require("./index");
-      const promise = loadNeonJs(ENVIRONMENT_ID);
+      const promise = loadNeonJs(CLIENT_KEY);
 
       await Promise.resolve();
       dispatchScriptEvent("error");
@@ -107,7 +107,7 @@ describe("Module loader", () => {
 
     it("rejects when Neon is not added to the window for some reason", async () => {
       const { loadNeonJs } = require("./index");
-      const promise = loadNeonJs(ENVIRONMENT_ID);
+      const promise = loadNeonJs(CLIENT_KEY);
 
       await Promise.resolve();
       dispatchScriptEvent("load");
