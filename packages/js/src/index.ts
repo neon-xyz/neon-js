@@ -104,11 +104,11 @@ neonPromise.catch((error: unknown) => {
   }
 });
 
-export const loadNeonJs: typeof loadNeonJsType = async (environmentId) => {
+export const loadNeonJs: typeof loadNeonJsType = async (clientKey) => {
   loadCalled = true;
   const Neon = await neonPromise;
   if (!Neon) {
     return null;
   }
-  return Neon(environmentId);
+  return Neon(clientKey);
 };

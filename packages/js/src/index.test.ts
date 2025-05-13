@@ -34,7 +34,7 @@ describe("Module loader", () => {
   it("does not inject the script when Neon.js is already loaded", async () => {
     require("./index");
 
-    window.Neon = jest.fn((environmentId) => ({ environmentId })) as any;
+    window.Neon = jest.fn((clientKey) => ({ clientKey })) as any;
 
     await new Promise((resolve) => setTimeout(resolve)).then(() => {
       expect(document.querySelector(`script[src="${NEON_JS_URL}"]`)).toBe(null);
