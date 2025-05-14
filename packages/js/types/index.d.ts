@@ -10,7 +10,15 @@ export interface Checkout {
 }
 
 export interface Neon {
-  startEmbeddedCheckout(props: { checkoutId: string; email?: string; phoneNumber?: string }): Checkout;
+  startEmbeddedCheckout(props: {
+    checkoutId: string;
+    email?: string | null | undefined;
+    phoneNumber?: string | null | undefined;
+    hideItems?: boolean;
+    hidePromoCodeInput?: boolean;
+    hideAmounts?: boolean;
+    fromRedirect?: boolean;
+  }): Checkout;
 }
 
 export interface NeonConstructor {
