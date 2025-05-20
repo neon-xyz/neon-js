@@ -25,7 +25,7 @@ This function returns a `Promise` that returns a `Neon` object.
 ```typscript
 import { loadNeonJs } from "@neonpay/js";
 
-const neon = await loadNeonJs("your-environment-id");
+const neon = await loadNeonJs("ck_your_client_key");
 ```
 
 ## Reference
