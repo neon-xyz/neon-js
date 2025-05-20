@@ -1,6 +1,6 @@
 {
   "name": "@neonpay/js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Neon.js loading utility",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
