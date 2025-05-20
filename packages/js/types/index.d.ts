@@ -5,6 +5,18 @@ declare global {
 }
 
 export interface Checkout {
+  on(
+    event: "checkout.amounts_updated" | "purchase.completed",
+    callback:
+      | ((data: PurchaseCompletedCallbackData) => void)
+      | ((data: { itemTotal: number; subtotalAmount: number; taxAmount: number; totalAmount: number }) => void),
+  ): void;
+  off(
+    event: "purchase.completed" | "checkout.amounts_updated",
+    callback:
+      | ((data: PurchaseCompletedCallbackData) => void)
+      | ((data: { itemTotal: number; subtotalAmount: number; taxAmount: number; totalAmount: number }) => void),
+  ): void;
   mount(domId: string): void;
   unmount(): void;
 }
