@@ -5,11 +5,13 @@ declare global {
 }
 
 export interface Checkout {
+  on(event: "ready", callback: () => void): void;
   on(event: "purchase.completed", callback: (data: PurchaseCompletedCallbackData) => void): void;
   on(
     event: "checkout.amounts_updated",
     callback: (data: { itemTotal: number; subtotalAmount: number; taxAmount: number; totalAmount: number }) => void,
   ): void;
+  off(event: "ready", callback: () => void): void;
   off(event: "purchase.completed", callback: (data: PurchaseCompletedCallbackData) => void): void;
   off(
     event: "checkout.amounts_updated",
