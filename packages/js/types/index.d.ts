@@ -11,12 +11,18 @@ export interface Checkout {
     event: "checkout.amounts_updated",
     callback: (data: { itemTotal: number; subtotalAmount: number; taxAmount: number; totalAmount: number }) => void,
   ): void;
+  on(event: "payment.started", callback: (data: PaymentStartedCallbackData) => void): void;
+  on(event: "payment.failed", callback: (data: PaymentFailedCallbackData) => void): void;
+  on(event: "payment.switch_country", callback: (data: SwitchCountryEventData) => void): void;
   off(event: "ready", callback: () => void): void;
   off(event: "purchase.completed", callback: (data: PurchaseCompletedCallbackData) => void): void;
   off(
     event: "checkout.amounts_updated",
     callback: (data: { itemTotal: number; subtotalAmount: number; taxAmount: number; totalAmount: number }) => void,
   ): void;
+  off(event: "payment.started", callback: (data: PaymentStartedCallbackData) => void): void;
+  off(event: "payment.failed", callback: (data: PaymentFailedCallbackData) => void): void;
+  off(event: "payment.switch_country", callback: (data: SwitchCountryEventData) => void): void;
   mount(domId: string): void;
   unmount(): void;
 }
