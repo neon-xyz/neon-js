@@ -21,6 +21,7 @@ export type SwitchCountryCallbackData = {
     id: string;
   };
   paymentMethodCountry: string | undefined;
+  paymentMethodCountryCode: string | undefined;
 };
 
 export interface Checkout {
