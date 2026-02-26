@@ -44,6 +44,7 @@ export interface Checkout {
 export interface Neon {
   startEmbeddedCheckout(props: {
     checkoutId: string;
+    checkoutToken: string;
     email?: string | null | undefined;
     phoneNumber?: string | null | undefined;
     hideItems?: boolean;
