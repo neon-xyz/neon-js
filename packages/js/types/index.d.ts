@@ -6,9 +6,10 @@ declare global {
 
 export type CheckoutAmountsUpdatedCallbackData = {
   itemTotal: number;
-  subtotalAmount: number;
-  taxAmount: number;
-  totalAmount: number;
+  subtotalAmount: number | null;
+  taxAmount: number | null;
+  taxRate: number | null;
+  totalAmount: number | null;
 };
 export type PurchaseCompletedCallbackData = { checkout: { id: string; purchaseId: string } };
 export type PaymentStartedCallbackData = { checkout: { id: string } };
