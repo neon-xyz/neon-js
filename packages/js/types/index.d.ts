@@ -52,6 +52,7 @@ export interface Neon {
     hidePromoCodeInput?: boolean;
     hideAmounts?: boolean;
     fromRedirect?: boolean;
+    hasTrackingConsent?: boolean;
   }): Checkout;
 }
 
