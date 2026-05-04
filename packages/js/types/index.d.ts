@@ -25,12 +25,7 @@ export type SwitchCountryCallbackData = {
   paymentMethodCountryCode: string | undefined;
 };
 
-export const TrackingConsent: {
-  readonly Consented: "consented";
-  readonly Declined: "declined";
-  readonly NotSet: "not_set";
-};
-export type TrackingConsent = (typeof TrackingConsent)[keyof typeof TrackingConsent];
+export type TrackingConsent = "consented" | "declined" | "not_set";
 
 export interface Checkout {
   on(event: "ready", callback: () => void): void;
