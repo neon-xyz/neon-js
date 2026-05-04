@@ -25,6 +25,8 @@ export type SwitchCountryCallbackData = {
   paymentMethodCountryCode: string | undefined;
 };
 
+export type TrackingConsent = "consented" | "declined" | "not_set";
+
 export interface Checkout {
   on(event: "ready", callback: () => void): void;
   on(event: "purchase.completed", callback: (data: PurchaseCompletedCallbackData) => void): void;
@@ -40,6 +42,7 @@ export interface Checkout {
   off(event: "payment.switch_country", callback: (data: SwitchCountryCallbackData) => void): void;
   mount(domId: string): void;
   unmount(): void;
+  setTrackingConsent(consent: Exclude<TrackingConsent, "not_set">): void;
 }
 
 export interface Neon {
@@ -52,6 +55,7 @@ export interface Neon {
     hidePromoCodeInput?: boolean;
     hideAmounts?: boolean;
     fromRedirect?: boolean;
+    trackingConsent?: TrackingConsent;
   }): Checkout;
 }
 
