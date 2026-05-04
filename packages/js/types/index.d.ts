@@ -25,16 +25,6 @@ export type SwitchCountryCallbackData = {
   paymentMethodCountryCode: string | undefined;
 };
 
-/**
- * Tracking-consent state passed from the merchant's site to the embedded checkout.
- *
- *  - `Consented`: the user accepted tracking on the merchant's banner. Embedded checkout
- *     enables analytics and skips its own consent UI.
- *  - `Declined`: the user declined on the merchant's banner. Embedded checkout disables
- *     analytics and skips its own consent UI.
- *  - `NotSet` (default when omitted): the merchant hasn't shared a decision. Embedded
- *     checkout falls back to country-based defaults.
- */
 export const TrackingConsent: {
   readonly Consented: "consented";
   readonly Declined: "declined";
@@ -70,10 +60,6 @@ export interface Neon {
     hidePromoCodeInput?: boolean;
     hideAmounts?: boolean;
     fromRedirect?: boolean;
-    /**
-     * Tracking-consent state from the merchant's banner. Defaults to
-     * `TrackingConsent.NotSet` (country-based defaults apply) when omitted.
-     */
     trackingConsent?: TrackingConsent;
   }): Checkout;
 }
