@@ -1,6 +1,6 @@
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-18-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "updateContentCommand": "yarn install",
   "customizations": {
     "vscode": {
