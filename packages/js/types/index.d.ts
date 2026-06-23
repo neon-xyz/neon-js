@@ -4,6 +4,10 @@ declare global {
   }
 }
 
+/////////////////////
+// CHECKOUT EVENTS //
+/////////////////////
+
 export type CheckoutAmountsUpdatedCallbackData = {
   itemTotal: number;
   subtotalAmount: number | null;
@@ -45,6 +49,37 @@ export interface Checkout {
   setTrackingConsent(consent: Exclude<TrackingConsent, "not_set">): void;
 }
 
+/////////////////////////
+// SUBSCRIPTION EVENTS //
+/////////////////////////
+
+export type SubscriptionActivatedCallbackData = { subscription: { id: string } };
+export type PaymentMethodUpdatedCallbackData = { subscription: { id: string } };
+export type SubscriptionFailedCallbackData = {
+  subscription: { id: string };
+  error: { errorMessage: string };
+};
+export type SubscriptionSwitchCountryCallbackData = {
+  subscription: { id: string };
+  paymentMethodCountryCode: string | undefined;
+  paymentMethodCountry: string | undefined;
+};
+
+export interface Subscription {
+  on(event: "ready", callback: () => void): void;
+  on(event: "subscription.activated", callback: (data: SubscriptionActivatedCallbackData) => void): void;
+  on(event: "subscription.failed", callback: (data: SubscriptionFailedCallbackData) => void): void;
+  on(event: "subscription.switch_country", callback: (data: SubscriptionSwitchCountryCallbackData) => void): void;
+  on(event: "payment_method.updated", callback: (data: PaymentMethodUpdatedCallbackData) => void): void;
+  off(event: "ready", callback: () => void): void;
+  off(event: "subscription.activated", callback: (data: SubscriptionActivatedCallbackData) => void): void;
+  off(event: "subscription.failed", callback: (data: SubscriptionFailedCallbackData) => void): void;
+  off(event: "subscription.switch_country", callback: (data: SubscriptionSwitchCountryCallbackData) => void): void;
+  off(event: "payment_method.updated", callback: (data: PaymentMethodUpdatedCallbackData) => void): void;
+  mount(domId: string): void;
+  unmount(): void;
+}
+
 export interface Neon {
   startEmbeddedCheckout(props: {
     checkoutId: string;
@@ -57,6 +92,19 @@ export interface Neon {
     fromRedirect?: boolean;
     trackingConsent?: TrackingConsent;
   }): Checkout;
+  startEmbeddedSubscription(props: {
+    subscriptionToken: string;
+    email?: string | null | undefined;
+    hideItems?: boolean;
+    hideAmounts?: boolean;
+    fromRedirect?: boolean;
+  }): Subscription;
+  startEmbeddedSubscriptionUpdatePaymentMethod(props: {
+    subscriptionToken: string;
+    token: string;
+    email?: string | null | undefined;
+    fromRedirect?: boolean;
+  }): Subscription;
 }
 
 export interface NeonConstructor {
