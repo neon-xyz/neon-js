@@ -1,7 +1,7 @@
 import { loadNeonJs } from "@neonpay/js";
 
 (async () => {
-  const neon = await loadNeonJs("environment-id");
+  const neon = await loadNeonJs("client-key");
   console.log(neon);
   neon
     .startEmbeddedCheckout({
