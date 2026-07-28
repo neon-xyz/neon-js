@@ -41,7 +41,7 @@
     "@types/node": "^25.9.3",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
-    "ts-jest": "^29.4.11",
+    "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3"
